@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+</head>
+<body>
+    <h1>Lista de pacientes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido paterno</th>
+                <th>Apellido materno</th>
+                <th>Fecha de nacimiento</th>
+                <th>No. Seguro social</th>
+                <th>Tipo de sangre</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paciente in object_list %}
+            <tr>
+                <td>{{paciente.nombre}}</td>
+                <td>{{paciente.primerApellido}}</td>
+                <td>{{paciente.segundoApellido}}</td>
+                <td>{{paciente.fecha_nac}}</td>
+                <td>{{paciente.numero_ss}}</td>
+                <td>{{paciente.tipo_sangre}}</td>
+                <td>
+                    <a href="">Editar</a>
+                    <a href="">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
