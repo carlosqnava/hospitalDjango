@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from .models import Paciente
+from .forms import PacienteForm
 
 
 class Lista(ListView):
@@ -9,4 +10,5 @@ class Lista(ListView):
 
 
 class Nuevo(CreateView):
-    pass
+    model = Paciente
+    form_class = PacienteForm
