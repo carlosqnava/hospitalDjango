@@ -10,7 +10,13 @@
     <div class="col-md-8">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Nuevo paciente</h3>
+                <h3 class="card-title">
+                    {% if editar %}
+                        Modificar paciente
+                    {% else %}
+                        Nuevo paciente
+                    {% endif %}
+                </h3>
             </div>
                 <form method="post">
                     <div class="card-body">
@@ -18,7 +24,7 @@
                         {{ form.as_p }}
                     </div>
                     <div class="card-footer">
-                        <input type="submit" class="btn btn-success" value="Guardar">
+                        <input type="submit" class="btn btn-success" value="{% if editar %}Guardar cambios{% else %}Agregar{% endif %}">
                     </div>
                 </form>
             </div>

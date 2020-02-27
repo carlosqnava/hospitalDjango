@@ -19,8 +19,10 @@ class Nuevo(CreateView):
 class Editar(UpdateView):
     model = Paciente
     form_class = PacienteForm
+    extra_context = {'editar':True}
 
     success_url = reverse_lazy('pacientes:lista')
 
 class Eliminar(DeleteView):
-    pass
+    model = Paciente
+    success_url = reverse_lazy('pacientes:lista')
