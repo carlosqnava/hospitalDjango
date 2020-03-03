@@ -6,7 +6,8 @@ class PacienteForm(ModelForm):
 
     class Meta:
         model = Paciente
-        fields = '__all__'
+        fields = ('nombre','primerApellido','segundoApellido',
+            'numero_ss','fecha_nac','tipo_sangre','estado','municipio')
 
         widgets = {
                 'nombre':TextInput(attrs={'class':'form-control'}),
@@ -15,4 +16,6 @@ class PacienteForm(ModelForm):
                 'numero_ss':TextInput(attrs={'class':'form-control'}),
                 'fecha_nac':DateInput(attrs={'class':'form-control'}),
                 'tipo_sangre':Select(attrs={'class':'form-control'}),
+                'estado':Select(attrs={'class':'form-control'}),
+                'municipio':Select(attrs={'class':'form-control'}),
         }
