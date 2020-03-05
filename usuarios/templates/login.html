@@ -29,9 +29,16 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Iniciar sesión</p>
 
-      <form action="../../index3.html" method="post">
+      {% if form.errors %}
+          <div class="alert alert-warning">
+            Datos no válidos, verifica tu información
+          </div>
+      {% endif %}
+        
+      <form method="post">
+        {% csrf_token %}
         <div class="input-group mb-3">
-          <input type="text" name="username" class="form-control" placeholder="Nombre de usuario">
+          <input required type="text" name="username" class="form-control" placeholder="Nombre de usuario">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -39,7 +46,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Contraseña">
+          <input required type="password" name="password" class="form-control" placeholder="Contraseña">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -68,7 +75,7 @@
         <a href="forgot-password.html">Olvide mi contraseña</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Registrar</a>
+        <a href="{% url 'usuarios:nuevo' %}" class="text-center">Registrar</a>
       </p>
     </div>
     <!-- /.login-card-body -->
