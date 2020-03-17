@@ -1,4 +1,5 @@
-from django.forms import ModelForm, PasswordInput, CharField, TextInput
+from django.forms import (ModelForm, PasswordInput, 
+                CharField, TextInput, ValidationError)
 from .models import Usuario
 
 
@@ -28,5 +29,18 @@ class UsuarioForm(ModelForm):
         user.set_password(self.cleaned_data["password"])
         if commit:
             user.save()
-        
         return user
+
+    def clean_password(self,*args, **kwargs):
+        if self.data['password'] != self.data['password_re']:
+            raise ValidationError('Las contraseñas son diferentes')
+        return self.data['password']
+
+
+class PerfilForm(ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ('first_name','last_name','email','rfc','foto')
+
+
+
