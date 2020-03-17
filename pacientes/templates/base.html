@@ -26,6 +26,11 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{% static 'plugins/summernote/summernote-bs4.css' %}">
   <!-- Google Font: Source Sans Pro -->
+  {% block css %}
+    
+  {% endblock css %}
+    
+
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -599,5 +604,10 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{% static 'dist/js/demo.js' %}"></script>
 <script src="{% static 'dist/js/funciones.js' %}"></script>
+
+{% block scripts %}
+  
+{% endblock scripts %}
+  
 </body>
 </html>

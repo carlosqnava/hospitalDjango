@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block titulo %}
     Modifica perfil de usuario
 {% endblock titulo %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
+{% endblock css %}
 
 {% block contenido %}
 <div class="row">
@@ -15,14 +21,6 @@
                    Actualiza perfil
                 </h3>
             </div>
-            
-            {% if messages %}
-                <div class="alert alert-success">
-                    {% for message in messages %}
-                        {{message}}
-                    {% endfor %}
-                </div>
-            {% endif %}
                 
                 <form method="post" enctype="multipart/form-data">
                     <div class="card-body">
@@ -40,4 +38,34 @@
 
     {% endblock contenido %}
     
+    
+    {% block scripts %}
+        
+      
+        {% if messages %}
+        <script src="{% static 'plugins/sweetalert2/sweetalert2.min.js' %}"></script>
+        <!-- Toastr -->
+        <script src="{% static 'plugins/toastr/toastr.min.js' %}"></script>
+            <script type="text/javascript">
+                var mensaje = '';
+                {% for message in messages %}
+                    mensaje += '{{message}}';
+                {% endfor %}
+                
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+            
+                    Toast.fire({
+                        type: 'success',
+                        title: mensaje
+                    });
+               
+            </script>
+        {% endif %}
+    {% endblock scripts %}
+        
     
