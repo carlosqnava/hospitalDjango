@@ -14,8 +14,13 @@ from hospital import settings
 from django.views.generic import DetailView
 
 
+from django.core.paginator import Paginator
+
+
 class Lista(ListView):
+    paginate_by = 5
     model = Paciente
+
 
 
 class Nuevo(CreateView):
