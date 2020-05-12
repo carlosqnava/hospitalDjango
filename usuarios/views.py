@@ -3,8 +3,8 @@ from django.contrib.auth.views import LoginView
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import TemplateView
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import UsuarioForm, PerfilForm
-from .models import Usuario
+from .forms import UsuarioForm, PerfilForm, GrupoForm
+from .models import Usuario, Grupo
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.core.mail import EmailMessage
@@ -28,6 +28,7 @@ class Login(LoginView):
 class Lista(ListView):
     #paginate_by = 5
     model = Usuario
+    form_class = GrupoForm
 
 
 class Nuevo(CreateView):

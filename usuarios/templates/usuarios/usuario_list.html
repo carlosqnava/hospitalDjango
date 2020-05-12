@@ -12,7 +12,7 @@
         <tr>
             <th>Usuario</th>
             <th>R.F.C</th>
-            <!--<th>Foto</th>-->
+            <th>Grupo</th>-->
         </tr>
     </thead>
     <tbody>
@@ -21,8 +21,8 @@
             <td>{{usuario.username}}</td>
             <td>{{usuario.rfc}}</td>
             <!--<td>{{usuario.foto}}</td>-->
-            
-            <td>
+            <td>{{ form.as_p }} </td> 
+            <!-- <td>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="permiso_administrador">
                     <label class="form-check-label" for="inlineCheckbox1">Usuario</label>
@@ -32,7 +32,7 @@
                     <label class="form-check-label" for="inlineCheckbox2">Administrador</label>
                 </div>
                 
-            </td>
+            </td> -->
         </tr>
         {% endfor %}
     </tbody>

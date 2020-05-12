@@ -1,6 +1,6 @@
 from django.forms import (ModelForm, PasswordInput, 
-                CharField, TextInput, ValidationError)
-from .models import Usuario
+                CharField, TextInput, ValidationError, Select)
+from .models import Usuario, Grupo
 
 
 class UsuarioForm(ModelForm):
@@ -42,5 +42,11 @@ class PerfilForm(ModelForm):
         model = Usuario
         fields = ('first_name','last_name','email','rfc','foto')
 
+class GrupoForm(ModelForm):
+    class Meta:
+        model = Grupo
+        fields = ('grupo',)
+
+        widgets = {'auth_group':Select(attrs={'class':'form-control'}),}
 
 
