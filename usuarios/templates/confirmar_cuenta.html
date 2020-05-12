@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,4 +18,25 @@
         <p><i>Saludos!!</i></p>
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Cuenta</title>
+</head>
+<body>
+    <div>
+        <h3>Validar cuenta</h3>
+        <p>Hola <b>{{user.username}}</b> </p>
+        <p>Para compeltar tu registro debes dar click en el siguiente enlace:</p>
+        <br>
+        <br>
+        <p><a href="http://{{dominio}}{% url "usuarios:activar" uidb64=uid token=token %}">Activar Cuenta</a></p>
+        <br>
+        <p><i>Saludos!!</i></p>
+    </div>
+</body>
+>>>>>>> e52eb3d7b49d41807b971e577dff8ec8b0db68e6
 </html>

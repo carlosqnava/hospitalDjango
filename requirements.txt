@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 django
 Pillow
 mysqlclient
 six
+=======
+django
+Pillow
+mysqlclient
+six
+>>>>>>> e52eb3d7b49d41807b971e577dff8ec8b0db68e6
 django-weasyprint

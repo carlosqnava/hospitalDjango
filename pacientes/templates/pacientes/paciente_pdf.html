@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block titulo %}Lista de pacientes{% endblock titulo %}
@@ -34,4 +35,42 @@
         
     </tbody>
 </table>
+=======
+{% extends 'base.html' %}
+
+{% block titulo %}Lista de pacientes{% endblock titulo %}
+    
+{% block contenido %}
+<h1>Datos del Paciente {{paciente}}</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido paterno</th>
+            <th>Apellido materno</th>
+            <th>Fecha de nacimiento</th>
+            <th>No. Seguro social</th>
+            <th>Tipo de sangre</th>
+            <th>Estado</th>
+            <th>Municipio</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>{{paciente.nombre}}</td>
+            <td>{{paciente.primerApellido}}</td>
+            <td>{{paciente.segundoApellido}}</td>
+            <td>{{paciente.fecha_nac}}</td>
+            <td>{{paciente.numero_ss}}</td>
+            <td>{{paciente.tipo_sangre}}</td>
+            <td>{{paciente.estado}}</td>
+            <td>{{paciente.municipio}}</td>
+            
+        </tr>
+        
+    </tbody>
+</table>
+>>>>>>> e52eb3d7b49d41807b971e577dff8ec8b0db68e6
 {% endblock contenido %}
