@@ -1,3 +1,5 @@
 django
 Pillow
 mysqlclient
+six
+django-weasyprint
