@@ -1,0 +1,69 @@
+@import url('https:/fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
+.container
+{
+    position: relative;
+}
+.container .card
+{
+    position: relative;
+    width: 320px;
+    height: 15pc;
+    background: #232323;
+    border-radius: 20px;
+}
+.container .card:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #9bdc28;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5% ease-in-out;    
+}
+.container .card:hover:before
+{
+    clip-path: circle(450px at 80% -20%);
+}
+
+.container .card .imgBx
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-70%);
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    transition: 0.8s;
+}
+.container .card:hover .imgBx
+{
+    top: 2%;
+    transform: translateY(10%);
+}
+
+.container .card .cuerpo
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 0.8;
+    z-index: 10;
+}
+.container .card:hover .cuerpo
+{
+    height: 210px;
+}
+.container .card .cuerpo h4
+{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+

@@ -12,7 +12,7 @@
         <tr>
             <th>Usuario</th>
             <th>R.F.C</th>
-            <th>Grupo</th>-->
+            <th>Grupo</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,10 @@
             <td>{{usuario.username}}</td>
             <td>{{usuario.rfc}}</td>
             <!--<td>{{usuario.foto}}</td>-->
-            <td>{{ form.as_p }} </td> 
+            <td>
+                <a title="Permiso Usuario" class="btn btn-success" href="{% url 'usuarios:permiso' usuario.id %}">
+                Cambiar permisos</a> 
+            </td> 
             <!-- <td>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="permiso_administrador">
