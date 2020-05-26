@@ -24,13 +24,59 @@
   </div>
 {% endfor %}
 
+{% if request.session.total > 0 %}
 <div class="card text-center">
   <div class="card-header" >
     Total= ${{ request.session.total|floatformat:2 }}
   </div>
   <div class="card-body">
-    <a href="{% url 'articulos:confirmaCompra' user.pk %}" class="btn btn-success btn-lg btn-block">Comprar ahora</a>
+    <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-default">
+      Finalizar Compra
+    </button>
+    
   </div>
 </div>
+{% else %}
+<div class="card text-center">
+  <div class="card-header" >
+    El carrito está vacío, ve a la lista para agregar articulos.
+  </div>
+  <div class="card-body">
+    <a href="{% url 'articulos:lista'%}" class="btn btn-success btn-lg btn-block">
+      Ir a la lista de articulos
+    </a>
+    
+  </div>
+</div>
+{% endif %}
+  
+
+
+
+ <!-- /.modal -->
+
+ <div class="modal fade" id="modal-default">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> Finaliza Compra</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>¿Quiéres confirmar la compra?&hellip;</p>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <a href="{% url 'articulos:confirmaCompra' user.pk %}" class="btn btn-success btn-lg btn-block">Comprar ahora</a>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
 
 {% endblock contenido %}

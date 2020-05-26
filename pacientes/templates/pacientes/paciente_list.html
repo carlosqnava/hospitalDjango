@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block titulo %}Lista de pacientes{% endblock titulo %}
 
@@ -43,17 +44,41 @@
                 <a title="Actualiza paciente" class="btn btn-warning" href="{% url 'pacientes:editar' paciente.id %}">
                     <i class="far fa-edit"></i>
                 </a>
-                <a title="Elimina paciente" class="btn btn-danger" href="{% url 'pacientes:eliminar' paciente.id %}">
+                <a title="Elimina paciente" class="btn btn-danger" href="javascript:eliminarPacienteModal('{% url 'pacientes:eliminar' paciente.id %}')">
                     <i class="far fa-trash-alt"></i>
                 </a>
-                <a title="Elimina paciente" class="btn btn-success" href="{% url 'pacientes:paciente_pdf' paciente.id %}">
+                <a title="PDF paciente" class="btn btn-success" href="{% url 'pacientes:paciente_pdf' paciente.id %}">
                     Datos Paciente PDF
                 </a>
+
+
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
+<button type="button" id="btnEliminarPacienteModal" class="btn btn-danger" data-toggle="modal" data-target="#modal_eliminar_paciente">Eliminar</button>
+
+<div class="modal fade" id="modal_eliminar_paciente">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Eliminar paciente</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>¿Estas seguro de que deseas eliminar este paciente?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+        <a id="EliminarPaciente" class="btn btn-danger" href="#">Eliminar</a></button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <nav aria-label="pagination">
@@ -77,5 +102,13 @@
         {% endif %}
     </ul>
   </nav>
+
+
+<script>
+    function eliminarPacienteModal(url){
+        document.querySelector("#EliminarPaciente").setAttribute('href',url);
+        document.querySelector("#btnEliminarPacienteModal").click();
+    }
+</script>
 {% endblock contenido %}
     

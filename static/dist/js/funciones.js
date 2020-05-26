@@ -19,4 +19,3 @@ $("#id_estado").change(function(e) {
           }
       });
   }); 
-  

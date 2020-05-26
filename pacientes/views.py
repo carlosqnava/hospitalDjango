@@ -1,5 +1,5 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import TemplateView
@@ -36,9 +36,11 @@ class Editar(UpdateView):
 
     success_url = reverse_lazy('pacientes:lista')
 
-class Eliminar(DeleteView):
-    model = Paciente
-    success_url = reverse_lazy('pacientes:lista')
+def eliminar(request, pk):
+    id = int(pk)
+    paciente = get_object_or_404(Paciente, id = id)
+    paciente.delete()
+    return redirect('pacientes:lista')
 
 
 def buscar_municipio(request):
