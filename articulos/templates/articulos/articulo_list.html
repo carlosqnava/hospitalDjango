@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-
-{% block titulo %}Lista de articulos{% endblock titulo %}
+{% load i18n %}
+{% block titulo %}{% trans 'Lista de articulos' %}{% endblock titulo %}
 
 {% block contenido %}
 <div class="contenedor">
-    <h1>Lista de Artículos</h1>
+    <h1>{% trans 'Lista de articulos' %}</h1>
 </div>
 
 <div class="album py-5 bg-ligth">
@@ -21,9 +21,9 @@
                     <p class="card-text"><i>{{ articulo.descripcion }}</i></p>
                     <ul class="list-group list-group-flush">
                     <li class="list-group-item">Stock: {{articulo.stock}}</li>
-                    <li class="list-group-item">Precio: <h5 id="presio">{{ articulo.precio }}</h5> </li>
+                    <li class="list-group-item">{% trans 'Precio' %}: <h5 id="presio">{{ articulo.precio }}</h5> </li>
 
-                    <li class="list-group-item"> Cantidad:
+                    <li class="list-group-item"> {% trans 'Cantidad' %}:
                             <div class="form-group">
 
                                 <form action="{% url 'articulos:comprar' %}" method="POST">
@@ -42,12 +42,12 @@
                                         {% if articulo.stock > 0 %}
                                             <div class="btn btn-success">
                                                 <i class="fas fa-cart-plus">
-                                                    <input class="btn" type="submit" value="Agregar al carrito">
+                                                    <input class="btn" type="submit" value="{% trans 'Agregar al carrito' %}">
                                                 </i>
                                             </div>
                                         {% else %}
 
-                                            <i class="fas fa-times-circle"></i> Sin existencias
+                                            <i class="fas fa-times-circle"></i> {% trans 'Sin existencias' %}
 
                                         {% endif %}
 

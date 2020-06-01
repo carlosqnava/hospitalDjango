@@ -1,34 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block titulo %}Lista de pacientes{% endblock titulo %}
+{% block titulo %}{% trans 'Historial de ventas' %}{% endblock titulo %}
 
     
 {% block contenido %}
 
+
+
 <div class="btn-group">
     <a title="Grafica Tipo de Sangre" class="btn btn-danger" href="{% url 'pacientes:grafica'%}">
-        grafica por tipo sangre
+        {% trans 'grafica por tipo sangre' %}
     </a>
     <a title="Grafica Edad" class="btn btn-success" href="{% url 'pacientes:grafica_edad'%}">
-        grafica por edad
+        {% trans 'grafica por edad' %}
     </a>
     <a title="pacientesPDF" class="btn btn-warning" href="{% url 'pacientes:lista_pdf'%}">
-        Generar PDF lista de pacientes
+        {% trans 'Generar PDF lista de pacientes' %}
     </a>
 </div>
 
-<h1>Lista de pacientes</h1>
+<h1>{% trans 'Lista de pacientes' %}</h1>
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Apellido paterno</th>
-            <th>Apellido materno</th>
-            <th>Fecha de nacimiento</th>
-            <th>No. Seguro social</th>
-            <th>Tipo de sangre</th>
-            <th>Opciones</th>
+            <th>{% trans 'Nombre' %}</th>
+            <th>{% trans 'Apellido paterno' %}</th>
+            <th>{% trans 'Apellido materno' %}</th>
+            <th>{% trans 'Fecha de nacimiento' %}</th>
+            <th>{% trans 'No. Seguro social' %}</th>
+            <th>{% trans 'Tipo de sangre' %}</th>
+            <th>{% trans 'Opciones' %}</th>
         </tr>
     </thead>
     <tbody>
@@ -48,7 +51,7 @@
                     <i class="far fa-trash-alt"></i>
                 </a>
                 <a title="PDF paciente" class="btn btn-success" href="{% url 'pacientes:paciente_pdf' paciente.id %}">
-                    Datos Paciente PDF
+                    {% trans 'Datos Paciente PDF' %}
                 </a>
 
 
@@ -58,23 +61,23 @@
     </tbody>
 </table>
 
-<button type="button" id="btnEliminarPacienteModal" class="btn btn-danger" data-toggle="modal" data-target="#modal_eliminar_paciente">Eliminar</button>
+<button hidden type="button" id="btnEliminarPacienteModal" class="btn btn-danger" data-toggle="modal" data-target="#modal_eliminar_paciente">Eliminar</button>
 
 <div class="modal fade" id="modal_eliminar_paciente">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Eliminar paciente</h4>
+        <h4 class="modal-title">{% trans 'Eliminar paciente' %}</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>¿Estas seguro de que deseas eliminar este paciente?</p>
+        <p>{% trans '¿Estas seguro de que deseas eliminar este paciente?' %}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-        <a id="EliminarPaciente" class="btn btn-danger" href="#">Eliminar</a></button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">{% trans 'Cancelar' %}</button>
+        <a id="EliminarPaciente" class="btn btn-danger" href="#">{% trans 'Eliminar' %}</a></button>
       </div>
     </div>
   </div>

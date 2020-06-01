@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block titulo %}
-    Agrega paciente
+    {% trans 'Agrega paciente' %}
 {% endblock titulo %}
 
 {% block contenido %}
@@ -12,9 +13,9 @@
             <div class="card-header">
                 <h3 class="card-title">
                     {% if editar %}
-                        Modificar paciente
+                        {% trans 'Modificar paciente' %}
                     {% else %}
-                        Nuevo paciente
+                        {% trans 'Nuevo paciente' %}
                     {% endif %}
                 </h3>
             </div>
@@ -24,7 +25,7 @@
                         {{ form.as_p }}
                     </div>
                     <div class="card-footer">
-                        <input type="submit" class="btn btn-success" value="{% if editar %}Guardar cambios{% else %}Agregar{% endif %}">
+                        <input type="submit" class="btn btn-success" value="{% if editar %} {% trans 'Guardar cambios' %}{% else %}{% trans 'Agregar' %}{% endif %}">
                     </div>
                 </form>
             </div>

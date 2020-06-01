@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,11 +28,11 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Iniciar sesión</p>
+      <p class="login-box-msg">{% trans 'Iniciar sesión' %}</p>
 
       {% if form.errors %}
           <div class="alert alert-warning">
-            Datos no válidos, verifica tu información
+            {% trans 'Datos no válidos, verifica tu información' %}
           </div>
       {% endif %}
         
@@ -58,13 +59,13 @@
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
-                Rercordar usuario
+                {% trans 'Rercordar usuario' %}
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+            <button type="submit" class="btn btn-primary btn-block">{% trans 'Ingresar' %}</button>
           </div>
           <!-- /.col -->
         </div>
@@ -73,10 +74,10 @@
 
     
       <p class="mb-1">
-        <a href="forgot-password.html">Olvide mi contraseña</a>
+        <a href="forgot-password.html">{% trans 'Olvide mi contraseña' %}</a>
       </p>
       <p class="mb-0">
-        <a href="{% url 'usuarios:nuevo' %}" class="text-center">Registrar</a>
+        <a href="{% url 'usuarios:nuevo' %}" class="text-center">{% trans 'Registrar' %}</a>
       </p>
     </div>
     <!-- /.login-card-body -->

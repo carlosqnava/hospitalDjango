@@ -1,8 +1,9 @@
 {% load static %}
 {% load static tags %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="{{ LANGUAGE_CODE }}">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{% block titulo %}{% endblock titulo %}</title>
@@ -74,11 +75,11 @@
           <span class="badge badge-success navbar-badge">{{ request.session.cuantos }}</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">Articulos en Carrito: {{ request.session.cuantos }}</span>
+          <span class="dropdown-item dropdown-header"> {% trans 'Articulos en Carrito' %}: {{ request.session.cuantos }}</span>
           <div class="dropdown-divider"></div>
 
           <div class="dropdown-divider"></div>
-          <a href="{% url 'articulos:vercarrito' %}" class="btn-success dropdown-footer ">Ir al Carrito</a>
+          <a href="{% url 'articulos:vercarrito' %}" class="btn-success dropdown-footer ">{% trans 'Ir al Carrito' %}</a>
         </div>
       </li>
 
@@ -182,7 +183,7 @@
     <a href="index3.html" class="brand-link">
       <img src="{% static 'dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Hospital Matasanos</span>
+      <span class="brand-text font-weight-light">{% trans 'Hospital Matasanos' %}</span>
     </a>
 
     <!-- Sidebar -->
@@ -212,24 +213,39 @@
                   <li class="nav-item">
                     <a href="{% url 'usuarios:perfil' %}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Perfil</p>
+                      <p>{% trans 'Perfil' %}</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{% url 'usuarios:logout' %}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Cerrar sesión</p>
+                      <p>{% trans 'Cerrar sesión' %}</p>
                     </a>
                   </li>
                 </ul>
               </a>
               </li>
-          
+          <li>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ redirect_to }}" />
+              <select name="language">
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% get_available_languages as LANGUAGES %}
+                  {% for lang in LANGUAGES %}
+                      <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                          {{ lang.1 }} ({{ lang.0 }})
+                      </option>
+                  {% endfor %}
+              </select>
+              <input type="submit" value="Go" />
+          </form>
+          </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Pacientes
+                {% trans 'Pacientes' %}
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">6</span>
               </p>
@@ -240,7 +256,7 @@
               <li class="nav-item">
                 <a href="{% url 'pacientes:lista' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Lista de pacientes</p>
+                  <p>{% trans 'Lista de pacientes' %}</p>
                 </a>
               </li>  
               {% endif %}
@@ -249,7 +265,7 @@
               <li class="nav-item">
                 <a href="{% url 'pacientes:nuevo' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Agregar paciente</p>
+                  <p>{% trans 'Agregar paciente' %}</p>
                 </a>
               </li>
               
@@ -261,7 +277,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Usuarios
+                {% trans 'Usuarios' %}
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">6</span>
               </p>
@@ -270,7 +286,7 @@
               <li class="nav-item">
                 <a href="{% url 'usuarios:lista' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Lista de Usuarios</p>
+                  <p>{% trans 'Lista de Usuarios' %}</p>
                 </a>
               </li>  
             </ul>
@@ -281,7 +297,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-syringe"></i>
               <p>
-                    Articulos
+                    {% trans 'Articulos' %}
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -290,14 +306,14 @@
                 <li class="nav-item">
                   <a href="{% url 'articulos:lista' %}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Lista de articulos</p>
+                    <p>{% trans 'Lista de articulos' %}</p>
                   </a>
                 </li>
 
                 <li class="nav-item">
                   <a href="{% url 'articulos:historial' %}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Historial de ventas</p>
+                    <p>{% trans 'Historial de ventas' %}</p>
                   </a>
                 </li>
             </ul>

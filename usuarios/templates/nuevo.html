@@ -1,10 +1,11 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Registro Hospital</title>
+  <title>{% trans 'Registro Hospital' %}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,12 +21,12 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../../index2.html"><b>Hospital Matasanos</a>
+    <a href="../../index2.html"><b>{% trans 'Hospital Matasanos' %}</a>
   </div>
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Registro de usuarios</p>
+      <p class="login-box-msg">{% trans 'Registro de usuarios' %}</p>
 
       <form method="post">
           {% csrf_token %}
@@ -35,19 +36,19 @@
               <div class="icheck-primary">
                 <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                 <label for="agreeTerms">
-                <a href="">Estoy de acuerdo con los terminos</a>
+                <a href="">{% trans 'Estoy de acuerdo con los terminos' %}</a>
                 </label>
               </div>
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+              <button type="submit" class="btn btn-primary btn-block">{% trans 'Registrar' %}</button>
             </div>
             <!-- /.col -->
           </div>
       </form>
 
-      <a href="{% url 'usuarios:login' %}" class="text-center">Ya tengo una cuenta</a>
+      <a href="{% url 'usuarios:login' %}" class="text-center">{% trans 'Ya tengo una cuenta' %}</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-
-{% block titulo %}Lista de articulos{% endblock titulo %}
+{% load i18n %}
+{% block titulo %}{% trans 'Lista de articulos' %}{% endblock titulo %}
 
 {% block contenido %}
 
-<h1>Tu carrito</h1>
+<h1>{% trans 'Tu carrito' %}</h1>
 
 {% for valor in object_list %}
 <div class="card mb-3" style="max-width: 100%;">
@@ -16,8 +16,8 @@
         <div class="card-body">
           <h5 class="card-title">{{ valor.0.nombre }}</h5>
           <p class="card-text">{{ valor.0.descripcion }}</p>
-          <p class="list-group-item">Cantidad = {{ valor.1 }}</p>
-          <p class="list-group-item">Precio = ${{ valor.0.precio }}</p>
+          <p class="list-group-item">{% trans 'Cantidad' %} = {{ valor.1 }}</p>
+          <p class="list-group-item">{% trans 'Precio' %} = ${{ valor.0.precio }}</p>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
   </div>
   <div class="card-body">
     <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#modal-default">
-      Finalizar Compra
+      {% trans 'Finalizar Compra' %}
     </button>
     
   </div>
@@ -39,11 +39,11 @@
 {% else %}
 <div class="card text-center">
   <div class="card-header" >
-    El carrito está vacío, ve a la lista para agregar articulos.
+    {% trans 'El carrito está vacío, ve a la lista para agregar articulos.' %}
   </div>
   <div class="card-body">
     <a href="{% url 'articulos:lista'%}" class="btn btn-success btn-lg btn-block">
-      Ir a la lista de articulos
+      {% trans 'Ir a la lista de articulos' %}
     </a>
     
   </div>

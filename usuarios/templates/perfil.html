@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block titulo %}
-    Modifica perfil de usuario
+    {% trans 'Modifica perfil de usuario' %}
 {% endblock titulo %}
 
 {% block css %}
@@ -18,7 +19,7 @@
         <div class="card card-primary">
             <div class="card-header">
                 <h3 class="card-title">
-                   Actualiza perfil
+                   {% trans 'Actualiza perfil' %}
                 </h3>
             </div>
                 

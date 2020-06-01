@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block titulo %}Lista de Usuarios{% endblock titulo %}
+{% block titulo %}{% trans 'Lista de Usuarios' %}{% endblock titulo %}
 
     
 {% block contenido %}
 
 
-<h1>Lista de Usuarios</h1>
+<h1>{% trans 'Lista de Usuarios' %}</h1>
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Usuario</th>
+            <th>{% trans 'Usuario' %}</th>
             <th>R.F.C</th>
-            <th>Grupo</th>
+            <th>{% trans 'Grupo' %}</th>
         </tr>
     </thead>
     <tbody>

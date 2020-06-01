@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 {% block titulo %}Lista de pacientes{% endblock titulo %}
     
 {% block contenido %}
-<h1>Datos del Paciente {{paciente}}</h1>
+<h1>{% trans 'Datos del Paciente' %} {{paciente}}</h1>
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Apellido paterno</th>
-            <th>Apellido materno</th>
-            <th>Fecha de nacimiento</th>
-            <th>No. Seguro social</th>
-            <th>Tipo de sangre</th>
-            <th>Estado</th>
-            <th>Municipio</th>
+            <th>{% trans 'Nombre' %}</th>
+            <th>{% trans 'Apellido paterno' %}</th>
+            <th>{% trans 'Apellido materno' %}</th>
+            <th>{% trans 'Fecha de nacimiento' %}</th>
+            <th>{% trans 'No. Seguro social' %}</th>
+            <th>{% trans 'Tipo de sangre' %}</th>
+            <th>{% trans 'Estado' %}</th>
+            <th>{% trans 'Municipio' %}</th>
             
         </tr>
     </thead>

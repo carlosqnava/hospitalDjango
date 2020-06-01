@@ -15,5 +15,5 @@ urlpatterns = [
 
     path('pdf/', ListaPdf.as_view(), name='lista_pdf'),
     path('pdf-paciente/<int:pk>', PacientePdf.as_view(), name='paciente_pdf'),
-
+    
 ]

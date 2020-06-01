@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-31 17:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: articulos/models.py:6
+msgid "Clave"
+msgstr "Key"
+
+#: articulos/models.py:7
+#, fuzzy
+#| msgid "Articulos"
+msgid "Artículo"
+msgstr "Items"
+
+#: articulos/models.py:8
+msgid "Descripción"
+msgstr "Description"
+
+#: articulos/models.py:9
+msgid "Imágen"
+msgstr "Image"
+
+#: articulos/models.py:10
+msgid "Precio unitario"
+msgstr "Unit price"
+
+#: articulos/models.py:11
+msgid "Unidades"
+msgstr "Units"
+
+#: articulos/models.py:18
+msgid "Categoría"
+msgstr "Category"
+
+#: articulos/models.py:25 usuarios/templates/usuarios/usuario_list.html:14
+msgid "Usuario"
+msgstr "User"
+
+#: articulos/models.py:31
+#, fuzzy
+#| msgid "Articulos"
+msgid "Articulo"
+msgstr "Items"
+
+#: articulos/models.py:32
+msgid "Venta"
+msgstr "Sell"
+
+#: articulos/templates/articulos/articulo_list.html:3
+#: articulos/templates/articulos/venta_list.html:3
+#: pacientes/templates/base.html:309
+msgid "Lista de articulos"
+msgstr "Items List"
+
+#: articulos/templates/articulos/articulo_list.html:7
+#, fuzzy
+#| msgid "Lista de articulos"
+msgid "Lista de Artículos"
+msgstr "Items List"
+
+#: articulos/templates/articulos/articulo_list.html:24
+#: articulos/templates/articulos/venta_list.html:20
+msgid "Precio"
+msgstr "Price"
+
+#: articulos/templates/articulos/articulo_list.html:26
+#: articulos/templates/articulos/venta_list.html:19
+msgid "Cantidad"
+msgstr "Quantity"
+
+#: articulos/templates/articulos/articulo_list.html:45
+#, fuzzy
+#| msgid "Ir al Carrito"
+msgid "Agregar al carrito"
+msgstr "Go to cart"
+
+#: articulos/templates/articulos/articulo_list.html:50
+msgid "Sin existencias"
+msgstr "Out of stock"
+
+#: articulos/templates/articulos/historial_pdf.html:6
+#, fuzzy
+#| msgid "Historial de ventas"
+msgid "Historial Ventas"
+msgstr "Sell History"
+
+#: articulos/templates/articulos/historial_pdf.html:16
+msgid "Producto"
+msgstr "Product"
+
+#: articulos/templates/articulos/venta_list.html:7
+msgid "Tu carrito"
+msgstr "Go to cart"
+
+#: articulos/templates/articulos/venta_list.html:34
+msgid "Finalizar Compra"
+msgstr "Finish Purchase"
+
+#: articulos/templates/articulos/venta_list.html:42
+msgid "El carrito está vacío, ve a la lista para agregar articulos."
+msgstr "Cart is empty, go to item list to add articles"
+
+#: articulos/templates/articulos/venta_list.html:46
+msgid "Ir a la lista de articulos"
+msgstr "Items List"
+
+#: hospital/settings.py:117
+msgid "Español"
+msgstr ""
+
+#: hospital/settings.py:118
+msgid "English"
+msgstr ""
+
+#: pacientes/models.py:24 pacientes/templates/pacientes/paciente_list.html:28
+#: pacientes/templates/pacientes/paciente_pdf.html:10
+#: pacientes/templates/pacientes/pacientes_pdf.html:11
+msgid "Nombre"
+msgstr "Name"
+
+#: pacientes/models.py:25 pacientes/templates/pacientes/paciente_list.html:29
+#: pacientes/templates/pacientes/paciente_pdf.html:11
+#: pacientes/templates/pacientes/pacientes_pdf.html:12
+msgid "Apellido paterno"
+msgstr "Last Name"
+
+#: pacientes/models.py:26 pacientes/templates/pacientes/paciente_list.html:30
+#: pacientes/templates/pacientes/paciente_pdf.html:12
+#: pacientes/templates/pacientes/pacientes_pdf.html:13
+msgid "Apellido materno"
+msgstr "Second Name"
+
+#: pacientes/models.py:27
+#, fuzzy
+#| msgid "No. Seguro social"
+msgid "Número de Seguro Social"
+msgstr "Social Security Number"
+
+#: pacientes/models.py:28 pacientes/templates/pacientes/paciente_list.html:31
+#: pacientes/templates/pacientes/paciente_pdf.html:13
+#: pacientes/templates/pacientes/pacientes_pdf.html:14
+msgid "Fecha de nacimiento"
+msgstr "Birth Day"
+
+#: pacientes/models.py:29 pacientes/templates/pacientes/paciente_list.html:33
+#: pacientes/templates/pacientes/paciente_pdf.html:15
+#: pacientes/templates/pacientes/pacientes_pdf.html:16
+msgid "Tipo de sangre"
+msgstr "Blood Type"
+
+#: pacientes/models.py:30 pacientes/templates/pacientes/paciente_pdf.html:17
+msgid "Municipio"
+msgstr "Municipality"
+
+#: pacientes/models.py:31 pacientes/templates/pacientes/paciente_pdf.html:16
+msgid "Estado"
+msgstr "State"
+
+#: pacientes/templates/base.html:78
+msgid "Articulos en Carrito"
+msgstr "Items in cart"
+
+#: pacientes/templates/base.html:82
+msgid "Ir al Carrito"
+msgstr "Go to cart"
+
+#: pacientes/templates/base.html:186 usuarios/templates/nuevo.html:24
+msgid "Hospital Matasanos"
+msgstr "Matasanos Hospital"
+
+#: pacientes/templates/base.html:216
+msgid "Perfil"
+msgstr "Profile"
+
+#: pacientes/templates/base.html:222
+msgid "Cerrar sesión"
+msgstr "Log out"
+
+#: pacientes/templates/base.html:248
+msgid "Pacientes"
+msgstr "Patients"
+
+#: pacientes/templates/base.html:259
+#: pacientes/templates/pacientes/paciente_list.html:24
+#: pacientes/templates/pacientes/pacientes_pdf.html:4
+#: pacientes/templates/pacientes/pacientes_pdf.html:7
+msgid "Lista de pacientes"
+msgstr "Patients List"
+
+#: pacientes/templates/base.html:268
+msgid "Agregar paciente"
+msgstr "Add New Patient"
+
+#: pacientes/templates/base.html:280
+msgid "Usuarios"
+msgstr "Users"
+
+#: pacientes/templates/base.html:289
+#: usuarios/templates/usuarios/usuario_list.html:4
+#: usuarios/templates/usuarios/usuario_list.html:10
+msgid "Lista de Usuarios"
+msgstr "Users List"
+
+#: pacientes/templates/base.html:300
+msgid "Articulos"
+msgstr "Items"
+
+#: pacientes/templates/base.html:316
+#: pacientes/templates/pacientes/paciente_list.html:5
+msgid "Historial de ventas"
+msgstr "Sell History"
+
+#: pacientes/templates/pacientes/paciente_form.html:5
+msgid "Agrega paciente"
+msgstr "Add New Patient"
+
+#: pacientes/templates/pacientes/paciente_form.html:16
+msgid "Modificar paciente"
+msgstr "Modify Patient"
+
+#: pacientes/templates/pacientes/paciente_form.html:18
+msgid "Nuevo paciente"
+msgstr "New Patient"
+
+#: pacientes/templates/pacientes/paciente_form.html:28
+msgid "Guardar cambios"
+msgstr "Save Changes"
+
+#: pacientes/templates/pacientes/paciente_form.html:28
+msgid "Agregar"
+msgstr "Add New Patient"
+
+#: pacientes/templates/pacientes/paciente_list.html:14
+msgid "grafica por tipo sangre"
+msgstr "blood type chart"
+
+#: pacientes/templates/pacientes/paciente_list.html:17
+msgid "grafica por edad"
+msgstr "age chart"
+
+#: pacientes/templates/pacientes/paciente_list.html:20
+msgid "Generar PDF lista de pacientes"
+msgstr "Generate Patients List PDF"
+
+#: pacientes/templates/pacientes/paciente_list.html:32
+#: pacientes/templates/pacientes/paciente_pdf.html:14
+#: pacientes/templates/pacientes/pacientes_pdf.html:15
+msgid "No. Seguro social"
+msgstr "Social Security Number"
+
+#: pacientes/templates/pacientes/paciente_list.html:34
+msgid "Opciones"
+msgstr "Options"
+
+#: pacientes/templates/pacientes/paciente_list.html:54
+msgid "Datos Paciente PDF"
+msgstr "Patient's Data PDF"
+
+#: pacientes/templates/pacientes/paciente_list.html:70
+msgid "Eliminar paciente"
+msgstr "Remove Patient"
+
+#: pacientes/templates/pacientes/paciente_list.html:76
+msgid "¿Estas seguro de que deseas eliminar este paciente?"
+msgstr "Are you sure you want to delete this patient?"
+
+#: pacientes/templates/pacientes/paciente_list.html:79
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: pacientes/templates/pacientes/paciente_list.html:80
+msgid "Eliminar"
+msgstr "Remove"
+
+#: pacientes/templates/pacientes/paciente_pdf.html:6
+msgid "Datos del Paciente"
+msgstr "Patient's Data"
+
+#: usuarios/templates/login.html:31
+msgid "Iniciar sesión"
+msgstr "Log In"
+
+#: usuarios/templates/login.html:35
+msgid "Datos no válidos, verifica tu información"
+msgstr "No valid data, verify our information"
+
+#: usuarios/templates/login.html:62
+msgid "Rercordar usuario"
+msgstr "Remember Me"
+
+#: usuarios/templates/login.html:68
+msgid "Ingresar"
+msgstr "Log In"
+
+#: usuarios/templates/login.html:77
+msgid "Olvide mi contraseña"
+msgstr "I forgot my password"
+
+#: usuarios/templates/login.html:80 usuarios/templates/nuevo.html:45
+msgid "Registrar"
+msgstr "Register"
+
+#: usuarios/templates/nuevo.html:8
+#, fuzzy
+#| msgid "Registrar"
+msgid "Registro Hospital"
+msgstr "Register"
+
+#: usuarios/templates/nuevo.html:29
+#, fuzzy
+#| msgid "Lista de Usuarios"
+msgid "Registro de usuarios"
+msgstr "Users List"
+
+#: usuarios/templates/nuevo.html:39
+msgid "Estoy de acuerdo con los terminos"
+msgstr "I agree with terms"
+
+#: usuarios/templates/nuevo.html:51
+msgid "Ya tengo una cuenta"
+msgstr "I alredy have an account"
+
+#: usuarios/templates/perfil.html:6
+msgid "Modifica perfil de usuario"
+msgstr "Modify user profile"
+
+#: usuarios/templates/perfil.html:22
+msgid "Actualiza perfil"
+msgstr "Update profile"
+
+#: usuarios/templates/usuarios/usuario_list.html:16
+msgid "Grupo"
+msgstr "Group"
